@@ -1,7 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { TransactionRepository } from './transaction.repository';
-import { InjectDataSource } from '@nestjs/typeorm';
-import { DataSource } from 'typeorm';
 import { CreateTransactionDto } from './dto/create-transaction.dto';
 import {
   BalanceChangedStatus,
@@ -13,15 +11,12 @@ import {
 } from './transaction.types';
 import { TransactionDto } from './dto/transaction.dto';
 import { FindTransactionFilterDto } from './dto/get-transaction-filter.dto';
-import { InternalAccountService } from 'src/internal/account/account.service';
-import { KafkaService } from 'src/config/kafka/kafka.service';
+import { KafkaService } from '../../config/kafka/kafka.service';
 
 @Injectable()
 export class TransactionService {
   constructor(
     private readonly transactionRepository: TransactionRepository,
-    @InjectDataSource() private readonly dataSourse: DataSource,
-    private readonly internalAccountService: InternalAccountService,
     private readonly kafkaService: KafkaService,
   ) {}
 
