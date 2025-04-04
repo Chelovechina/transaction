@@ -1,4 +1,3 @@
-import { KafkaService } from 'src/config/kafka/kafka.service';
 import { TransactionService } from './transaction.service';
 import { TransactionRepository } from './transaction.repository';
 import { Test, TestingModule } from '@nestjs/testing';
@@ -7,6 +6,7 @@ import { mock } from 'jest-mock-extended';
 import { CreateTransactionDto } from './dto/create-transaction.dto';
 import { EventNameEnum, TransactionType } from './transaction.types';
 import { TransactionEntity } from './entities/transaction.entity';
+import { KafkaService } from './../../config/kafka/kafka.service';
 
 describe('TransactionService', () => {
   let transactionService: TransactionService;
