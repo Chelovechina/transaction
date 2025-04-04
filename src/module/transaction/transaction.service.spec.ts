@@ -1,7 +1,7 @@
 import { TransactionService } from './transaction.service';
 import { TransactionRepository } from './transaction.repository';
 import { Test, TestingModule } from '@nestjs/testing';
-import { InternalAccountService } from 'src/internal/account/account.service';
+import { InternalAccountService } from './../../internal/account/account.service';
 import { mock } from 'jest-mock-extended';
 import { CreateTransactionDto } from './dto/create-transaction.dto';
 import { EventNameEnum, TransactionType } from './transaction.types';
